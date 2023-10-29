@@ -70,7 +70,10 @@ TEMPLATES = [
     },
 ]
 
+#for normall site routing 
 WSGI_APPLICATION = 'djangochat.wsgi.application'
+
+#for chat mode site routing 
 ASGI_APPLICATION = 'djangochat.asgi.application'
 
 
