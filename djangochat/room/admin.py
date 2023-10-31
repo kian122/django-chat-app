@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+# Room model
+from .models import Room
+
+
+#registering Room
+admin.site.register(Room)
