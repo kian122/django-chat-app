@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+
+# login
 LOGOUT_REDIRECT_URL = "/"
 
 LOGIN_REDIRECT_URL = "/rooms/"
