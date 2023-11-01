@@ -1,26 +1,17 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-# import Room model
-from .models import Room
+from .models import Room, Message
 
-# importing login func for security 
-from django.contrib.auth.decorators import login_required
-
-# rooms
 @login_required
 def rooms(request):
-    # defining rooms
     rooms = Room.objects.all()
 
-    return render( request , "room/rooms.html" , {
-        'rooms': rooms
-    })
+    return render(request, 'room/rooms.html', {'rooms': rooms})
 
-# room
 @login_required
-def room(request , slug):
-    # object Room
+def room(request, slug):
     room = Room.objects.get(slug=slug)
-    return render( request , "room/room.html" , {
-        'room': room
-    })
+    messages = Message.objects.filter(room=room)[0:25]
+
+    return render(request, 'room/room.html', {'room': room, 'messages': messages})
