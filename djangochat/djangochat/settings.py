@@ -84,6 +84,12 @@ WSGI_APPLICATION = 'djangochat.wsgi.application'
 #for chat mode site routing 
 ASGI_APPLICATION = 'djangochat.asgi.application'
 
+# channel settings for in memory saver
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
